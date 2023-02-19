@@ -12,6 +12,7 @@ const Expense = (props) => {
         return (
           <ExpenseItem
             // location={expense.LocationOfExpenditure}
+            id = {expense.id}
             date={expense.date}
             title={expense.title}
             amount={expense.amount}
