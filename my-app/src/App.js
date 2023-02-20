@@ -1,5 +1,7 @@
 import Expense from "./Components/Expenses/Expense";
+import ExpenseForm from './Components/NewExpense/ExpenseForm.js';
 // import Card from "./Components/Card";
+import NewExpense from "./Components/NewExpense/NewExpense";
 
 
 // import logo from './logo.svg';
@@ -38,6 +40,7 @@ const App = () => {
   ];
   return (
     <div>
+      <NewExpense/>
       <Expense items={expense} />
     </div>
   );
