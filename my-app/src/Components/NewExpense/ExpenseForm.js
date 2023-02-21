@@ -2,31 +2,62 @@ import "./ExpenseForm.css";
 import React, { useState } from "react";
 
 const ExpenseForm = () => {
-  // const input = document.getElementsByTagName("input");
+  
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-  // input.addEventListener('onChange', (event)=>{
-  //   console.log(event.target.value);
+  // const [enteredInput , setInut] = useState({
+  //   enteredTitle : "",
+  //   enteredAmount : "",
+  //   enteredDate : ""
   // })
 
-  const [enteredTitle, setEnteredTitle] = useState("");
 
   const typeHandler = (event) => {
     setEnteredTitle(event.target.value);
+    // setInut({
+    //   ...enteredInput,
+    //   enteredTitle:event.target.value
+    // })
+
+    // setInut((prevState)=>{
+    //  return {
+    //   ...prevState,
+    //   enteredTitle : event.target.value
+    //  }
+    // })
+
   };
 
-  const [enteredAmount, setEnteredAmount] = useState("");
   const amountChangeHandler = (event) => {
-    // console.log(event.target.value)
+    console.log(event.target.value)
     setEnteredAmount(event.target.value);
+    // setInut({
+    //   ...enteredInput,
+    //   enteredAmount:event.target.value
+    // })
   };
 
-  const [enteredDate, setEnteredDate] = useState("");
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
+    // setInut({
+    //   ...enteredInput,
+    //   enteredDate:event.target.value
+    // })
   };
 
+  const submitHandler = (event)=>{
+    event.preventDefault();
+      const obj = {
+        name :"harry",
+        id : 22
+      }
+      console.log(obj);
+  }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
