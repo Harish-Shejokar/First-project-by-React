@@ -45,15 +45,16 @@ const App = () => {
   const addExpenseHandler = (enteredExpense) =>{
     // console.log("In App.js");
     // console.log(data);
-    console.log(enteredExpense.date);
+    // console.log(enteredExpense.date);
     // enteredExpense.date = Date.parse(enteredExpense.date);
-
+    
     setExpenses((prevExpense)=>{
       return [enteredExpense,
         ...prevExpense]
     });
     
   }
+  console.log(expense);
 
   return (
     <div>
