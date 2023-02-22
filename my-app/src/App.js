@@ -1,5 +1,5 @@
+import React , {useState}  from "react";
 import Expense from "./Components/Expenses/Expense";
-import ExpenseForm from './Components/NewExpense/ExpenseForm.js';
 // import Card from "./Components/Card";
 import NewExpense from "./Components/NewExpense/NewExpense";
 
@@ -38,10 +38,30 @@ const App = () => {
       LocationOfExpenditure: "Mumbai",
     },
   ];
+  // var Data = [{}];
+  // const [expense,addExpense] = useState([{
+  //     id: "e1",
+  //     title: "Toilet Paper",
+  //     amount: 94.12,
+  //     date: new Date(2020, 7, 14)
+  //   }]);
+
+  const addExpenseHandler = data =>{
+    // console.log("In App.js");
+    console.log(data);
+    // expense=[data];
+    // Data = [{...data}];
+    // console.log(Data);
+    
+    
+    // addExpense(Data);
+  }
+
   return (
     <div>
-      <NewExpense/>
-      <Expense items={expense} />
+
+      <NewExpense addExpense={addExpenseHandler}/>
+      <Expense addExpense={addExpenseHandler} items={expense} />
     </div>
   );
 }

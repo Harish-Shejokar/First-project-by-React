@@ -1,7 +1,7 @@
 import "./ExpenseForm.css";
 import React, { useState } from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -31,7 +31,7 @@ const ExpenseForm = () => {
   };
 
   const amountChangeHandler = (event) => {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setEnteredAmount(event.target.value);
     // setInut({
     //   ...enteredInput,
@@ -50,10 +50,16 @@ const ExpenseForm = () => {
   const submitHandler = (event)=>{
     event.preventDefault();
       const obj = {
-        name :"harry",
-        id : 22
+       title : enteredTitle,
+       amount : enteredAmount,
+       date : enteredDate
       }
-      console.log(obj);
+
+      props.onSaveExpenseData(obj);
+
+      setEnteredTitle('');
+      setEnteredAmount('');
+      setEnteredDate('');
   }
 
   return (
@@ -61,11 +67,12 @@ const ExpenseForm = () => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={typeHandler} />
+          <input value={enteredTitle} type="text" onChange={typeHandler} />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
           <input
+            value={enteredAmount}
             onChange={amountChangeHandler}
             type="number"
             min="0.01"
@@ -75,6 +82,7 @@ const ExpenseForm = () => {
         <div className="new-expense__control">
           <label>Date</label>
           <input
+            value={enteredDate}
             onChange={dateChangeHandler}
             type="date"
             min="2019-0-22"
