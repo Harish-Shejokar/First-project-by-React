@@ -43,10 +43,6 @@ const App = () => {
  const [expense, setExpenses] = useState(Dummy_Expenses);
 
   const addExpenseHandler = (enteredExpense) =>{
-    // console.log("In App.js");
-    // console.log(data);
-    // console.log(enteredExpense.date);
-    // enteredExpense.date = Date.parse(enteredExpense.date);
     
     setExpenses((prevExpense)=>{
       return [enteredExpense,
@@ -56,9 +52,10 @@ const App = () => {
   }
   // console.log(expense);
 
+ 
+
   return (
     <div>
-
       <NewExpense addExpense={addExpenseHandler}/>
       <Expense addExpense={addExpenseHandler} items={expense} />
     </div>
