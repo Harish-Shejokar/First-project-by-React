@@ -29,7 +29,7 @@ const ExpenseItem = (props) =>{
   }
   
   return (
-    <div>
+    <li>
       
     <Card  className="expense-item" id={props.id}>
       <ExpenseDate date={props.date} />
@@ -39,7 +39,7 @@ const ExpenseItem = (props) =>{
       <button onClick = {clickHandler} >ChangeTitle</button>
       {/* <button onClick = {DeleteExpense} >DeleteExpense</button> */}
     </Card>
-    </div>
+    </li>
   );
 }
 
